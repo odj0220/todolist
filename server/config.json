@@ -1,0 +1,8 @@
+{
+  "listen": 3000,
+  "dbConf": {
+    "host": "wwww.djcloud.co.kr",
+    "port": 27017,
+    "db": "todolist"
+  }
+}

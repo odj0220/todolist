@@ -1,0 +1,4 @@
+.idea/
+client/node_modules/
+client/e2e/
+server/node_modules/

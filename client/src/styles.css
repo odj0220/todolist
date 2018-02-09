@@ -1,0 +1,12 @@
+.import input{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 57px;
+  text-indent: -9999px;
+  height: 29px;
+}
+.import {
+  display: inline-block;
+  position: relative;
+}

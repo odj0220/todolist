@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="page-header">
+    <input type="text" [(ngModel)]="insert.description">
+    <select [(ngModel)]="insert.priority"><option *ngFor="let p of priority" [value]="p">{{p}}</option></select>
+    <button class="btn btn-default btn-sm"(click)="insertItem()">추가</button>
+    <button class="btn btn-default btn-sm" (click)="export()">export</button>
+    <div class="import">
+      <input type="file" (change)="import($event)" #upload/>
+      <button class="btn btn-default btn-sm">import</button>
+    </div>
+
+  </div>
+
+  <div *ngIf="list">
+    <h2>완료된 할 일</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th width="60%;">Description</th>
+        <th width="15%;">Priority</th>
+        <th width="15%;">Status</th>
+        <th width="10%;">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-template ngFor let-todo [ngForOf]="list">
+        <tr *ngIf="todo.status === 'close'">
+          <td>{{todo.description}}</td>
+          <td><select [(ngModel)]="todo.priority" (change)="update(todo)"><option *ngFor="let p of priority" [value]="p">{{p}}</option></select></td>
+          <td><select [(ngModel)]="todo.status" (change)="update(todo)"><option *ngFor="let s of status" [value]="s">{{s}}</option></select></td>
+          <td><button class="btn btn-danger btn-xs" (click)="delete(todo)">delete</button></td>
+        </tr>
+      </ng-template>
+      </tbody>
+    </table>
+
+    <h2>진행 중인 할 일</h2>
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th width="60%;">Description</th>
+        <th width="15%;">Priority</th>
+        <th width="15%;">Status</th>
+        <th width="10%;">Delete</th>
+      </tr>
+      </thead>
+      <tbody>
+      <ng-template ngFor let-todo [ngForOf]="list">
+        <tr *ngIf="todo.status === 'inprogress'">
+          <td>{{todo.description}}</td>
+          <td><select [(ngModel)]="todo.priority" (change)="update(todo)"><option *ngFor="let p of priority" [value]="p">{{p}}</option></select></td>
+          <td><select [(ngModel)]="todo.status" (change)="update(todo)"><option *ngFor="let s of status" [value]="s">{{s}}</option></select></td>
+          <td><button class="btn btn-danger btn-xs" (click)="delete(todo)">delete</button></td>
+        </tr>
+      </ng-template>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+
