@@ -9,7 +9,7 @@ server 디렉토리로 이동합니다.
 npm module을 설치합니다. (node 설치필요)
     
     
-    npm install
+        npm install
     
 서버를 구동합니다. (http://127.0.0.1:3000)
 
