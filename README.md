@@ -6,7 +6,7 @@ server 디렉토리로 이동합니다.
 
     cd server;
    
-npm modules를 설치합니다.
+npm modules를 설치합니다. (node가 설치되어 있어야 합니다.)
 
     npm install;
     
